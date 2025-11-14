@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <form id="resetPasswordForm">
+    <h3>Reset Password</h3>
+    <label for="">Email</label>
+    <input type="email" id="email"><br>
+    <label for="">Password</label>
+    <input type="password" id="newPassword" class="password">
+    <div>
+      <input type="checkbox" class="input">
+      <span>show password</span>
+    </div><br>
+    
+    <label for="">Confirm Password</label>
+    <input type="password" id="confirmNewPassword">
+    <div>
+      <input type="checkbox" name="" class="inputs">
+      <span>Show Password</span>
+    </div><br><br>
+    
+    <button>Reset</button>
+
+  </form>
+  <div class="toast"></div>
+  <script>
+    const form =document.getElementById('resetPasswordForm');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault()
+      const email=document.getElementById('email').value.trim()
+      const newPass=document.getElementById('newPassword').value.trim()
+      const confirmPass=document.getElementById('confirmNewPassword').value.trim()
+      let user=JSON.parse(localStorage.getItem('user'))
+      const emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+  if(!email.match(emailPattern)){
+    message('enter a valid email')
+
+    return
+  }
+      if(!user || email !== user.email){
+        message('email not found')
+        return
+      }
+      if(newPass !== confirmPass){
+        message('password does not match')
+        return
+      }
+
+      user.password=newPass
+      localStorage.setItem('user', JSON.stringify(user))
+      form.reset()
+      window.location.href='main.html'
+    })
+
+
+    let password=document.querySelector('.input')
+let save=document.getElementById('newPassword')
+password.addEventListener('click', ()=>{
+if(password.checked){
+  save.type='text'
+}else{
+  save.type='password'
+}
+})
+
+let passwords=document.querySelector('.inputs')
+let saves=document.getElementById('confirmNewPassword')
+passwords.addEventListener('click', ()=>{
+if(passwords.checked){
+  saves.type='text'
+}else{
+  saves.type='password'
+}
+})
+ function message(toast){
+  const toas=document.querySelector('.toast')
+  toas.textContent=toast
+  toas.classList.add('show')
+  setTimeout( ()=> {
+     toas.classList.remove('show')
+  }, 3000)
+}
+  </script>
+</body>
+</html>

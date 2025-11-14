@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "editor.wordWrap": "on",
+    "workbench.colorTheme": "Default High Contrast",
+    "editor.tabSize": 2,
+    "editor.linkedEditing": false
+}

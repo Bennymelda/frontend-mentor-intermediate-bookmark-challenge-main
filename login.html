@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <form  id="loginForm">
+    <label for="">Email</label>
+    <input type="email" class="email" id="loginEmail"><br>
+    <label for="">password</label>
+    <input type="password" class="password" id="loginPassword">
+    <div>
+      <input type="checkbox" class="checker">
+      <span>show password</span>
+    </div><br><br>
+    <a href="reset.html" class="a">Reset password</a>
+    <button>Log in</button>
+  </form>
+  <div class="toast"></div>
+  
+
+  
+  <script>
+    
+/*
+   let passwords=document.querySelector('.checker')
+let saves=document.querySelector('.password')
+passwords.addEventListener('click', ()=>{
+if(passwords.checked){
+  saves.type='text'
+}else{
+  saves.type='password'
+}
+})
+    const loginForm=document.getElementById('loginForm')
+    loginForm.addEventListener('submit', function(e){
+      e.preventDefault()
+const loginEmail=document.getElementById('loginEmail').value.trim()
+const loginPassword=document.getElementById('loginPassword').value.trim()
+const storedUser= JSON.parse(localStorage.getItem('user'))
+const emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+  if(!loginEmail.match(emailPattern)){
+    message('enter a valid email')
+
+    return
+  }
+if(!storedUser){
+  message('No user found pls sign up first')
+  return
+}
+if(loginEmail !== storedUser.email){
+  message('wrong email')
+  localStorage.setItem('currentUser', JSON.stringify(storedUser))
+  return
+}
+if(loginPassword !== storedUser.password){
+  message('wrong pasword')
+  localStorage.setItem('currentUser', JSON.stringify(storedUser))
+  return
+}
+
+loginForm.reset()
+window.location.href='main.html'
+    })
+  function message(toast){
+  const toas=document.querySelector('.toast')
+  toas.textContent=toast
+  toas.classList.add('show')
+  setTimeout( ()=> {
+     toas.classList.remove('show')
+  }, 3000)
+}
+  */
+ let passwords=document.querySelector('.checker')
+let saves=document.querySelector('.password')
+passwords.addEventListener('click', ()=>{
+if(passwords.checked){
+  saves.type='text'
+}else{
+  saves.type='password'
+}
+})
+
+const loginForm = document.getElementById('loginForm')
+
+loginForm.addEventListener('submit', function(e){
+  e.preventDefault()
+
+  const loginEmail = document.getElementById('loginEmail').value.trim()
+  const loginPassword = document.getElementById('loginPassword').value.trim()
+  const storedUser = JSON.parse(localStorage.getItem('user'))
+
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+  
+  // validate email pattern
+  if(!loginEmail.match(emailPattern)){
+    message('enter a valid email')
+    return
+  }
+
+  // no saved user
+  if(!storedUser){
+    message('No user found, please sign up first')
+    return
+  }
+
+  // check email
+  if(loginEmail !== storedUser.email){
+    message('wrong email')
+    return
+  }
+
+  // check password
+  if(loginPassword !== storedUser.password){
+    message('wrong password')
+    return
+  }
+
+  // SUCCESS LOGIN ✔
+  localStorage.setItem("currentUser", JSON.stringify(storedUser))
+
+  loginForm.reset()
+  window.location.href = 'main.html'
+})
+
+function message(toast){
+  const toas=document.querySelector('.toast')
+  toas.textContent=toast
+  toas.classList.add('show')
+  setTimeout( ()=> {
+     toas.classList.remove('show')
+  }, 3000)
+}
+
+  </script>
+</body>
+</html>
