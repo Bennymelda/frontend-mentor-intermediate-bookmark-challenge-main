@@ -6,7 +6,8 @@ body{
   padding: 0;
   margin: 0;
   background-color: white;
-  font-family:  roboto;
+  overflow-x: hidden;
+  font-family: 'Times New Roman', Times, serif;
 }
 .h1{
   font-size: 30px;
@@ -35,7 +36,7 @@ background-color:  rgb(110, 80, 218);
   transform: background-color 0.9s ease;
   font-size: 18px;
   white-space: nowrap;
-  padding:20px;
+  padding:10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -99,7 +100,6 @@ background-color:  rgb(110, 80, 218);
   width: 80%;
   height: 60%;
   border-bottom-left-radius: 120px;
- 
   right: 0;
 }
 .img{
@@ -122,7 +122,6 @@ border-radius: 10px;
 .three{
 text-align: center;
 width: 80%;
-
 margin: 0 auto;
 }
 .widthss{
@@ -239,6 +238,7 @@ hr{
   padding-right: 20px;
   padding-left: 20px;
   margin: 0 auto;
+  justify-content: center;
   width: 55%;
 margin-bottom: 50px;
 }
@@ -255,7 +255,7 @@ margin-bottom: 50px;
   text-align: center;
 }
 .bop{
-  margin: 0 auto;
+  justify-content: center;
   align-items: center;
   text-align: center;
   display: flex;
@@ -270,7 +270,8 @@ margin-bottom: 50px;
   text-align: center;
   font-size: 16px;
   border: none;
-  white-space: nowrap;
+  
+  white-space: wrap;
   border-radius: 5px;
   cursor: pointer;
  transition: background-color 0.3s ease;
@@ -308,8 +309,7 @@ margin-bottom: 50px;
 
 .links{
   margin-bottom: 100px;
-  padding: 20px 50px;
- 
+  padding: 20px 10px;
   position: relative;
 }
   ul{
@@ -369,7 +369,6 @@ color: white;
   display: flex;
   justify-content: space-between;
   position: fixed;
- 
   z-index: 3000;
 }
 
@@ -473,7 +472,7 @@ font-weight: bold;
   z-index: 2000;
   height: 18px;
   top: 20px;
-  right: 20px;
+  right: 10px;
   cursor: pointer;
   
 }
@@ -492,7 +491,8 @@ font-weight: bold;
 }
 .answer {
   display: none;
-  font-size: 20px;
+  font-size: 18px;
+  opacity: 0.8;
 }
 
 .arrow-up {
@@ -505,8 +505,9 @@ font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  opacity: 0.8;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .arrow-down, .arrow-up {
@@ -573,6 +574,10 @@ ul {
     margin-bottom: 50px;
   
 }
+#features-link,#pricing-link,#contact-link{
+  cursor: pointer;
+  color: black;
+}
 .top{
   display: flex;
   margin-top: 0px;
@@ -587,6 +592,7 @@ ul {
 nav{
    display: flex;
    margin: 0;
+   color: black;
    padding: 0;
    margin-bottom: 0px;
    right: auto;
@@ -749,6 +755,10 @@ border-radius: 10px;
 .span{
   font-size: 24px;
 }
+#features-link,#pricing-link,#contact-link{
+  cursor: pointer;
+  color: black;
+}
 #p{
   font-size: 22px;
 }
@@ -759,6 +769,9 @@ border-radius: 10px;
     background-color: red;
     color: white;
     border-radius: 10px;
+  }
+  .button{
+    padding: 20px;
   }
 }
 @media(min-width: 1024px){
@@ -851,6 +864,7 @@ nav ul {
   }
   .button{
     border: none;
+    padding: 20px;
   }
   .button:hover{
     border: 5px solid grey;
