@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+
+/*
 let button =document.querySelector('.us')
 button.addEventListener('click', ()=>{
   console.log(button)
@@ -105,7 +106,7 @@ if(menu.src.endsWith('icon-hamburger.svg')){
   link.style.display='none'
 }
 })
-=======
+*/
 let array=[{
   id:1,
   img:'illustration-features-tab-1.svg',
@@ -330,4 +331,4 @@ if (currentUser) {
   // If user is not logged in, send them to sign in page
   window.location.href = "login.html";
 }
->>>>>>> 001f6c2 (Initial commit)
+
